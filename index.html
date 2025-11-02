@@ -194,84 +194,97 @@
         );
 
         // Project data
-        const projects = [
+            const projects = [
           {
-            title: "Differential for an Offroad Vehicle",
-            description: "Designed and built a 3-axis robotic arm for pick-and-place operations using Arduino, stepper motors, and custom 3D-printed components.",
-            image: "https://placehold.co/600x400/ADD8E6/000000?text=Robotic+Arm",
-            tags: ["Arduino", "3D Printing", "SolidWorks", "Robotics"]
+              title: "Custom Front Drive Unit (FDU) for a 4WD Offroad Vehicle",
+              description: "Designed and manufactured a custom differential solution for a 4WD offroad vehicle to compete in the Baja SAE competitions.",
+              image: "https://placehold.co/600x400/ADD8E6/000000?text=Custom+Diff",
+              tags: ["Siemens NX", "MATLAB", "NASTRAN", "FEA", "Kinematic Simulation", 'Mechanical Design', 'Manufacturing']
+          },
+          
+          {
+              title: "Offroad Car Axle Design",
+              description: "Collaborated on a team to design and 3D print a functional prosthetic hand for a child, using SolidWorks for modeling and FDM printing.",
+              detailedDescription: "This project involved the complete design and analysis of a car axle. CAD modeling was done in SolidWorks, followed by finite element analysis (FEA) to simulate bending and torsional stresses. The design was optimized for strength-to-weight ratio to improve vehicle performance and efficiency.",
+              image: "https://placehold.co/600x400/ADD8E6/000000?text=Prosthetic",
+              tags: ["SolidWorks", "3D Printing", "Biomedical"]
+          },
+          
+          {
+              title: "Investigating Heat Treating Methods on 4130 Steel",
+              description: "Performed structural integrity analysis on aerospace components using finite element analysis to ensure safety under extreme loads.",
+              detailedDescription: "Investigated various heat-treating methods on 4130 steel to optimize its mechanical properties. Used material testing equipment to measure changes in hardness, tensile strength, and ductility. The project provided valuable insights into the effects of quenching media and tempering temperatures on steel microstructure.",
+              image: "https://github.com/kaanayt0004/kaanayt0004.github.io/blob/main/OnePagers/TorqueTesting.png?raw=true",
+              tags: ["GD&T", "FEA", "Python"]
           },
           {
-            title: "Transfer Case Design and Analysis",
-            description: "Developed a low-cost, gravity-fed water filtration system using natural materials, analyzing flow rates and filtration efficiency.",
-            image: "https://placehold.co/600x400/ADD8E6/000000?text=Filtration+System",
-            tags: ["ANSYS", "Matlab", "Thermodynamics"]
+              title: "Transfer Case Design and Analysis",
+              description: "Developed a low-cost, gravity-fed water filtration system using natural materials, analyzing flow rates and filtration efficiency.",
+              detailedDescription: "Designed and analyzed a multi-stage transfer case for a 4x4 drivetrain. Used MATLAB for gear ratio calculations and torque distribution modeling. Finite element analysis (FEA) was performed to assess structural integrity, and simulations were run to evaluate efficiency under different operating conditions.",
+              image: "https://placehold.co/600x400/ADD8E6/000000?text=Filtration+System",
+              tags: ["ANSYS", "Matlab", "Thermodynamics"]
           },
           {
-            title: "Aerodynamic CFD Based Optimization of a Taxi Vehicle",
-            description: "Conducted a thermal and stress analysis on a new engine block design in SolidWorks to optimize performance and fuel efficiency.",
-            image: "https://placehold.co/600x400/ADD8E6/000000?text=Engine+Design",
-            tags: ["SolidWorks", "FEA", "CAD"]
+              title: "Universal Joint Assembly Design",
+              description: "Designed an intelligent HVAC system that uses sensors and machine learning to optimize energy usage and maintain comfort.",
+              detailedDescription: "Designed a universal joint assembly for a power transmission system using SolidWorks. Performed motion and stress simulations to ensure smooth operation and durability. The project focused on selecting appropriate materials and ensuring proper geometric dimensioning and tolerancing (GD&T) for manufacturability.",
+              image: "https://placehold.co/600x400/ADD8E6/000000?text=HVAC+System",
+              tags: ["Python", "Sensors", "IoT"]
           },
           {
-            title: "Investigating Heat Treating Methods on 4130 Steel",
-            description: "Performed structural integrity analysis on aerospace components using finite element analysis to ensure safety under extreme loads.",
-            image: "https://placehold.co/600x400/ADD8E6/000000?text=Aerospace",
-            tags: ["GD&T", "FEA", "Python"]
+              title: "Aerodynamic CFD Based Optimization of a Taxi Vehicle",
+              description: "Conducted a thermal and stress analysis on a new engine block design in SolidWorks to optimize performance and fuel efficiency.",
+              detailedDescription: "This project focused on improving the fuel efficiency of a taxi vehicle by optimizing its aerodynamic shape. Used ANSYS Fluent for computational fluid dynamics (CFD) simulations, analyzing drag coefficients and air flow patterns. The final design included modifications to the front bumper and rear spoiler, which resulted in a significant reduction in drag.",
+              image: "https://placehold.co/600x400/ADD8E6/000000?text=Engine+Design",
+              tags: ["SolidWorks", "FEA", "CAD"]
           },
           {
-            title: "Universal Joint Assembly Design",
-            description: "Designed an intelligent HVAC system that uses sensors and machine learning to optimize energy usage and maintain comfort.",
-            image: "https://placehold.co/600x400/ADD8E6/000000?text=HVAC+System",
-            tags: ["Python", "Sensors", "IoT"]
+              title: "Bevel Gear Analysis Code",
+              description: "Used computational fluid dynamics (CFD) to optimize the aerodynamic shape of a wind turbine blade, increasing power output.",
+              detailedDescription: "Developed a Python-based analysis tool for bevel gear design. The code automates complex calculations for gear geometry, stress, and contact analysis. It allows engineers to quickly iterate on designs and verify performance against industry standards, streamlining the design process significantly.",
+              image: "https://placehold.co/600x400/ADD8E6/000000?text=Wind+Turbine",
+              tags: ["ANSYS Fluent", "CFD", "Aerodynamics"]
           },
           {
-            title: "Car Axle Design",
-            description: "Collaborated on a team to design and 3D print a functional prosthetic hand for a child, using SolidWorks for modeling and FDM printing.",
-            image: "https://placehold.co/600x400/ADD8E6/000000?text=Prosthetic",
-            tags: ["SolidWorks", "3D Printing", "Biomedical"]
+              title: "Gearbox Motion Simulation and Analysis",
+              description: "Contributed to the design and analysis of a lightweight chassis for a Formula SAE competition vehicle, focusing on structural rigidity.",
+              detailedDescription: "Performed a comprehensive motion simulation and analysis on a multi-stage gearbox using SolidWorks. The simulation modeled the motion of gears under various load conditions to identify potential issues such as tooth interference and excessive wear. The analysis results were used to optimize gear profiles and shaft alignment for improved efficiency and longevity.",
+              image: "https://placehold.co/600x400/ADD8E6/000000?text=Formula+SAE",
+              tags: ["SolidWorks", "FEA", "Teamwork"]
           },
           {
-            title: "Bevel Gear Analysis Code",
-            description: "Used computational fluid dynamics (CFD) to optimize the aerodynamic shape of a wind turbine blade, increasing power output.",
-            image: "https://placehold.co/600x400/ADD8E6/000000?text=Wind+Turbine",
-            tags: ["ANSYS Fluent", "CFD", "Aerodynamics"]
+              title: "Laser Absorption Research",
+              description: "Developed a passive cooling solution for high-power electronics, performing heat transfer simulations to validate the design.",
+              detailedDescription: "Conducted research on laser absorption properties of various materials, focusing on applications in manufacturing and micromachining. Utilized experimental setups to measure absorption rates and thermal responses, contributing to the development of a predictive model for material-laser interaction. The findings helped optimize laser-based cutting and welding processes.",
+              image: "https://placehold.co/600x400/ADD8E6/000000?text=Thermal+Management",
+              tags: ["Thermodynamics", "ANSYS", "Heat Transfer"]
           },
           {
-            title: "Gearbox Motion Simulation and Analysis",
-            description: "Contributed to the design and analysis of a lightweight chassis for a Formula SAE competition vehicle, focusing on structural rigidity.",
-            image: "https://placehold.co/600x400/ADD8E6/000000?text=Formula+SAE",
-            tags: ["SolidWorks", "FEA", "Teamwork"]
+              title: "Tractive Effort Model",
+              description: "Created a Python script and hardware setup to log sensor data from a custom-built test rig, automating data collection and analysis.",
+              detailedDescription: "Developed a tractive effort model for an electric vehicle using MATLAB. The model simulates the forces acting on the vehicle, including rolling resistance, aerodynamic drag, and grade resistance, to predict its performance and range. The simulation was validated with real-world driving data.",
+              image: "https://placehold.co/600x400/ADD8E6/000000?text=Data+Logger",
+              tags: ["Python", "Arduino", "Data Analysis"]
           },
           {
-            title: "Laser Absorption Research",
-            description: "Developed a passive cooling solution for high-power electronics, performing heat transfer simulations to validate the design.",
-            image: "https://placehold.co/600x400/ADD8E6/000000?text=Thermal+Management",
-            tags: ["Thermodynamics", "ANSYS", "Heat Transfer"]
+              title: "Custom CVT",
+              description: "Designed and programmed a competitive robot for a university robotics club, winning the autonomous challenge section.",
+              detailedDescription: "Designed a custom Continuously Variable Transmission (CVT) for a small-scale prototype. The project involved CAD modeling in SolidWorks, followed by kinematic and dynamic analysis. The design aims to provide a wide range of gear ratios, improving the efficiency and performance of the prototype.",
+              image: "https://placehold.co/600x400/ADD8E6/000000?text=Robotics+Club",
+              tags: ["Robotics", "Arduino", "C++"]
           },
           {
-            title: "Tractive Effort Model",
-            description: "Created a Python script and hardware setup to log sensor data from a custom-built test rig, automating data collection and analysis.",
-            image: "https://placehold.co/600x400/ADD8E6/000000?text=Data+Logger",
-            tags: ["Python", "Arduino", "Data Analysis"]
-          },
-          {
-            title: "Custom CVT",
-            description: "Designed and programmed a competitive robot for a university robotics club, winning the autonomous challenge section.",
-            image: "https://placehold.co/600x400/ADD8E6/000000?text=Robotics+Club",
-            tags: ["Robotics", "Arduino", "C++"]
-          },
-          {
-            title: "Full-Body Vehicle Simulation",
-            description: "Conducted a detailed failure analysis on a broken mechanical component, using material characterization and stress calculations.",
-            image: "https://placehold.co/600x400/ADD8E6/000000?text=Material+Science",
-            tags: ["Materials", "Matlab", "Stress Analysis"]
+              title: "Full-Body Vehicle Simulation",
+              description: "Conducted a detailed failure analysis on a broken mechanical component, using material characterization and stress calculations.",
+              detailedDescription: "Created a full-body vehicle simulation model to predict its dynamic behavior under various driving conditions. The simulation, built in MATLAB and Simulink, integrated sub-models for the suspension, steering, and powertrain. This tool allows for virtual prototyping and optimization of vehicle systems.",
+              image: "https://placehold.co/600x400/ADD8E6/000000?text=Material+Science",
+              tags: ["Materials", "Matlab", "Stress Analysis"]
           }
-        ];
+      ];
         
         // Photography data with locations and their country
         const photographyData = [
-            { url: "https://placehold.co/600x400/ADD8E6/000000?text=Paris,+France", location: "Paris, France", city: "Paris" },
+            { url: "https://github.com/kaanayt0004/kaanayt0004.github.io/blob/main/i.jpg?raw=true", location: "Istanbul, Turkey", city: "Istanbul" },
             { url: "https://placehold.co/400x600/ADD8E6/000000?text=Kyoto,+Japan", location: "Kyoto, Japan", city: "Kyoto" },
             { url: "https://placehold.co/600x400/ADD8E6/000000?text=New+York+City,+USA", location: "New York City, USA", city: "New York City" },
             { url: "https://placehold.co/400x600/ADD8E6/000000?text=Machu+Picchu,+Peru", location: "Machu Picchu, Peru", city: "Machu Picchu" },
@@ -348,44 +361,186 @@
         };
 
         // New Project Detail Component
-        const ProjectDetailPage = ({ project, onBack }) => {
-            return (
-                <div className="py-20 px-4 flex-1">
-                    <div className="container mx-auto max-w-4xl">
-                        <button
-                            onClick={onBack}
-                            className="inline-flex items-center text-amber-800 hover:text-amber-900 mb-8 transition-colors duration-200"
-                        >
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-                            </svg>
-                            Back to Projects
-                        </button>
-                        <h2 className="text-4xl font-bold text-gray-800 mb-4">{project.title}</h2>
-                        <img 
-                            src={project.image} 
-                            alt={`${project.title} Project`} 
-                            className="w-full h-96 object-cover rounded-xl shadow-lg mb-6" 
-                        />
-                        <div className="flex flex-wrap gap-2 mb-6">
-                            {project.tags.map((tag, tagIndex) => (
-                                <span key={tagIndex} className="bg-amber-100 text-amber-800 text-sm font-semibold px-3 py-1 rounded-full">
-                                    {tag}
-                                </span>
-                            ))}
-                        </div>
-                        <p className="text-lg leading-relaxed text-gray-700">{project.description}</p>
-                        {/* You can add more detailed content here */}
-                        <div className="mt-8 p-6 bg-amber-50 rounded-lg border border-amber-200">
-                          <h3 className="text-xl font-bold text-gray-800 mb-2">Detailed Information</h3>
-                          <p className="text-gray-600">
-                            This is a placeholder for more detailed project information, including technologies used, challenges faced, and the final outcome. You can replace this text with more specific content for each project.
-                          </p>
-                        </div>
+        // New Project Detail Component
+const ProjectDetailPage = ({ project, onBack }) => {
+    
+    let detailedContent;
+
+    // Use a switch statement to render content based on the project title
+    switch (project.title) {
+        case "Custom Front Drive Unit (FDU) for a 4WD Offroad Vehicle":
+            detailedContent = (
+                <>
+                    <p className="text-gray-600 mb-4">
+                      Goal: Develop a custom front drive unit (FDU) for a four wheel drive offroad racing car with the main objective of robustness.<br></br>
+                      Solution: Designed a geared differential with one way bearings for a Baja SAE car from scratch utilizing tools such as Siemens NX, Simcenter NASTRAN, MATLAB and knowledge on solid mechanics.
+                    </p>
+                    <div className="mt-6">
+                        <h4 className="text-lg font-semibold text-gray-800 mb-2">Engineering Requirements - Decision Matrix</h4>
+                        Requirements:
+                        <ul className="list-disc pl-6">
+                        <li>FDU shall transmit at least 150 ft-lb of torque to the individual front wheels. [R01]</li>
+                        <li>FDU shall maintain full torque capacity for a minimum of 38.5 miles of car travel or equivalent number of cycles. [R02]</li>
+                        <li>FDU shall satisfy a factor of safety of 1.5 at a minimum for systems that require external services. [R03]</li>
+                        <li>FDU shall weigh less than 17 lbf. [R04]</li> 
+                        <li>FDU shall be replaceable with the previous cars front drive solution (Bought Differential from Hilliard). [R05]</li>
+                        </ul>
                     </div>
-                </div>
+
+                    <div className="mt-6">
+                        <h4 className="text-lg font-semibold text-gray-800 mb-2">Design and Modeling</h4>
+                        <p className="text-gray-600">
+                          At a concept level, a geared differential system was chosen to satisfy the FDU requirements. 
+                          One way bearings pressed into the bevel gear allow torque transfer to the axles from the transmission along with
+                          the ability to spin faster if need be. The idea is to allow outer wheels to rotate faster than the inner wheels in a turn.
+                          <br></br>
+                          <br></br>
+                          The FDU housing was modeled using Siemens NX. The gears were deisgned using Geartrax. Figure 1 shows an image of the FDU assembly.
+                          Dual tapered spherical roller bearings were used to keep the axle outputs aligned such that the bevel gear is rigidly mounted. These
+                          outputs are attached to the bevel gear via a key that connects to the pressed one way bearing. 
+                        </p>
+                    </div>
+                    <div className="mt-6">
+                        <h4 className="text-lg font-semibold text-gray-800 mb-2">Analysis</h4>
+                        <p className="text-gray-600">
+                        <ul className="list-disc pl-6">
+                        <li>Bevel Gear Pressfit Analysis</li>
+                        <li> Gear Teeth Contact Analysis </li>
+                        <li>Shaft Hand calculations</li>
+                        <li>Housing FEA</li>
+                        <li> Fatigue? </li>
+                        </ul>
+                        </p>
+                      
+                    </div>
+                </>
             );
-        };
+            break;
+        case "Offroad Car Axle Design":
+            detailedContent = (
+                <>
+                    <p className="text-gray-600 mb-4">
+                      Goal: Design and manufacture axles for a four wheel drive offroad racing car with the main objective of robustness.<br></br>
+                      Solution: 
+                    </p>
+                    <div className="mt-6">
+                        <h4 className="text-lg font-semibold text-gray-800 mb-2">Engineering Requirements - Decision Matrix</h4>
+                        Requirements:
+                        <ul className="list-disc pl-6">
+                        <li>Axles shall transmit at least 150 ft-lb of torque from the inboard transmission to the wheels. [R01]</li>
+                        <li>FDU shall maintain full torque capacity for a minimum of 38.5 miles of car travel or equivalent number of cycles. [R02]</li>
+                        <li>Axles shall satisfy a factor of safety of 2.5 at a minimum to be able to function in case of a failure of the other shaft. [R03]</li>
+                        <li>FDU shall weigh less than 17 lbf. [R04]</li> 
+                        <li>FDU shall be replaceable with the previous cars front drive solution (Bought Differential from Hilliard). [R05]</li>
+                        </ul>
+                    </div>
+
+                    <div className="mt-6">
+                        <h4 className="text-lg font-semibold text-gray-800 mb-2">Design and Modeling</h4>
+                        <p className="text-gray-600">
+                          At a concept level, a geared differential system was chosen to satisfy the FDU requirements. 
+                          One way bearings pressed into the bevel gear allow torque transfer to the axles from the transmission along with
+                          the ability to spin faster if need be. The idea is to allow outer wheels to rotate faster than the inner wheels in a turn.
+                          <br></br>
+                          <br></br>
+                          The FDU housing was modeled using Siemens NX. The gears were deisgned using Geartrax. Figure 1 shows an image of the FDU assembly.
+                          Dual tapered spherical roller bearings were used to keep the axle outputs aligned such that the bevel gear is rigidly mounted. These
+                          outputs are attached to the bevel gear via a key that connects to the pressed one way bearing. 
+                        </p>
+                    </div>
+                    <div className="mt-6">
+                        <h4 className="text-lg font-semibold text-gray-800 mb-2">Analysis</h4>
+                        <p className="text-gray-600">
+                        <ul className="list-disc pl-6">
+                        <li>Bevel Gear Pressfit Analysis</li>
+                        <li> Gear Teeth Contact Analysis </li>
+                        <li>Shaft Hand calculations</li>
+                        <li>Housing FEA</li>
+                        <li> Fatigue? </li>
+                        </ul>
+                        </p>
+                      
+                    </div>
+                </>
+            );
+            break;
+            
+        case "Transfer Case Design and Analysis":
+            detailedContent = (
+                <>
+                    <p className="text-gray-600 mb-4">
+                        Designed and analyzed a multi-stage transfer case for a 4x4 drivetrain. Used MATLAB for gear ratio calculations and torque distribution modeling.
+                    </p>
+                    <div className="mt-6">
+                        <h4 className="text-lg font-semibold text-gray-800 mb-2">Kinematic Analysis</h4>
+                        <p className="text-gray-600">
+                            MATLAB scripts were written to model the kinematic behavior of the gear train, ensuring smooth power transfer in various drive modes.
+                        </p>
+                    </div>
+                    {/* Add more specific content for this project */}
+                    <body class="h-screen flex items-center justify-center">
+                      <img src='https://placehold.co/600x400/ADD8E6/000000?text=Material+Science'></img>
+                    </body>
+                </>
+            );
+            break;
+
+        case "Offroad Car Axle Design":
+            detailedContent = (
+                <>
+                    <p className="text-gray-600 mb-4">
+                       This project focused on improving the fuel efficiency of a taxi vehicle by optimizing its aerodynamic shape. Used ANSYS Fluent for computational fluid dynamics (CFD) simulations.
+                    </p>
+                    {/* Add more specific content for this project */}
+                </>
+            );
+            break;
+        
+        // Add more cases for each project title
+        default:
+            detailedContent = (
+                <p className="text-gray-600">
+                    No detailed information available for this project.
+                </p>
+            );
+            break;
+    }
+
+    return (
+        <div className="py-20 px-4 flex-1">
+            <div className="container mx-auto max-w-4xl">
+                <button
+                    onClick={onBack}
+                    className="inline-flex items-center text-amber-800 hover:text-amber-900 mb-8 transition-colors duration-200"
+                >
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                    </svg>
+                    Back to Projects
+                </button>
+                <h2 className="text-4xl font-bold text-gray-800 mb-4">{project.title}</h2>
+                <img 
+                    src={project.image} 
+                    alt={`${project.title} Project`} 
+                    className="w-full h-auto object-contain rounded-xl shadow-lg mb-6" 
+                />
+                <div className="flex flex-wrap gap-2 mb-6">
+                    {project.tags.map((tag, tagIndex) => (
+                        <span key={tagIndex} className="bg-amber-100 text-amber-800 text-sm font-semibold px-3 py-1 rounded-full">
+                            {tag}
+                        </span>
+                    ))}
+                </div>
+                <p className="text-lg leading-relaxed text-gray-700">{project.description}</p>
+                
+                <div className="mt-8 p-6 bg-amber-50 rounded-lg border border-amber-200">
+                    <h3 className="text-xl font-bold text-gray-800 mb-2">Detailed Information</h3>
+                    {detailedContent}
+                </div>
+            </div>
+        </div>
+    );
+};
         
         const InterestsPage = ({ setCurrentPage }) => {
             const photography = photographyData.slice(0, 6);
@@ -850,14 +1005,14 @@
                       </div>
                       
                       {/* Project Grid */}
-                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8">
                         {filteredProjects.length > 0 ? (
                           filteredProjects.map((project, index) => (
                             <div key={index} className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 transform hover:scale-105">
                               <img 
                                 src={project.image} 
                                 alt={`${project.title} Project`} 
-                                className="w-full h-48 object-cover" 
+                                className="w-full h-auto object-contain" 
                               />
                               <div className="p-6">
                                 <h3 className="text-xl font-bold text-gray-800 mb-2">{project.title}</h3>
@@ -966,10 +1121,10 @@
                     </a>
                   </div>
                   <div className="text-sm text-amber-100 flex flex-col space-y-1">
-                    <a href="mailto:your.email@example.com" className="hover:text-white transition-colors">
+                    <a href="mailto:kaanayt004@protonmail.com" className="hover:text-white transition-colors">
                       your.email@example.com
                     </a>
-                    <a href="https://linkedin.com/in/[your-profile]" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                    <a href="https://linkedin.com/in/kaan-aytekin" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
                       LinkedIn Profile
                     </a>
                   </div>
