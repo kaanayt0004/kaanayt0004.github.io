@@ -14,8 +14,6 @@
     <!-- Load Merriweather font from Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
     <!-- Load D3.js library for the world map -->
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="https://unpkg.com/topojson@3.0.2/dist/topojson.min.js"></script>
     <style>
       body {
         font-family: 'Merriweather', serif;
@@ -187,7 +185,7 @@
             }}
             className={`font-bold px-3 py-2 transition-all duration-300 transform hover:scale-110 ${
               isActive ? 'text-amber-800' : 'text-gray-500 hover:text-amber-800'
-            }`}
+            } w-full text-center`}
           >
             {children}
           </a>
@@ -198,7 +196,7 @@
           {
               title: "Custom Front Drive Unit (FDU) for a 4WD Offroad Vehicle",
               description: "Designed and manufactured a custom differential solution for a 4WD offroad vehicle to compete in the Baja SAE competitions.",
-              image: "https://placehold.co/600x400/ADD8E6/000000?text=Custom+Diff",
+              image: "https://github.com/kaanayt0004/kaanayt0004.github.io/blob/main/OnePagers/Differential.png?raw=true",
               tags: ["Siemens NX", "MATLAB", "NASTRAN", "FEA", "Kinematic Simulation", 'Mechanical Design', 'Manufacturing']
           },
           
@@ -206,7 +204,7 @@
               title: "Offroad Car Axle Design",
               description: "Collaborated on a team to design and 3D print a functional prosthetic hand for a child, using SolidWorks for modeling and FDM printing.",
               detailedDescription: "This project involved the complete design and analysis of a car axle. CAD modeling was done in SolidWorks, followed by finite element analysis (FEA) to simulate bending and torsional stresses. The design was optimized for strength-to-weight ratio to improve vehicle performance and efficiency.",
-              image: "https://placehold.co/600x400/ADD8E6/000000?text=Prosthetic",
+              image: "https://github.com/kaanayt0004/kaanayt0004.github.io/blob/main/OnePagers/Axle.png?raw=true",
               tags: ["SolidWorks", "3D Printing", "Biomedical"]
           },
           
@@ -766,7 +764,62 @@ const ProjectDetailPage = ({ project, onBack }) => {
                 </div>
             );
         };
+        const MobileNav = ({ currentPage, setCurrentPage, isMobileMenuOpen, setIsMobileMenuOpen }) => {
+          
+          const handleNavClick = (page) => {
+            setCurrentPage(page);
+            setIsMobileMenuOpen(false); // Linke tıklayınca menüyü kapat
+          };
 
+          return (
+            // Bu navigasyon çubuğu sadece mobil cihazlarda (md:) görünür
+            <div className="md:hidden fixed top-0 left-0 right-0 bg-white shadow-lg z-50">
+              {/* Üst Kısım: İsim ve Hamburger Butonu */}
+              <div className="flex justify-between items-center p-4">
+                <a 
+                  href="#" 
+                  onClick={() => handleNavClick('about')} 
+                  className="text-2xl font-bold text-amber-800"
+                >
+                  Kaan Aytekin
+                </a>
+                <button 
+                  onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                  className="text-gray-700 hover:text-amber-800 focus:outline-none"
+                >
+                  {/* Hamburger veya Kapat (X) ikonu */}
+                  {isMobileMenuOpen ? (
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  ) : (
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                  )}
+                </button>
+              </div>
+
+              {/* Açılır Menü Linkleri */}
+              {isMobileMenuOpen && (
+                <nav className="flex flex-col p-4 border-t border-gray-200 bg-gray-50">
+                  <NavItem href="about" isActive={currentPage === 'about'} onClick={handleNavClick}>About</NavItem>
+                  <NavItem href="projects" isActive={currentPage === 'projects' || currentPage === 'project-detail'} onClick={handleNavClick}>Projects</NavItem>
+                  <NavItem href="interests" isActive={currentPage === 'interests' || currentPage === 'photography-gallery'} onClick={handleNavClick}>Interests</NavItem>
+                  <NavItem href="contact" isActive={currentPage === 'contact'} onClick={handleNavClick}>Contact</NavItem>
+                  <a
+                    href="https://github.com/kaanayt0004/kaanayt0004.github.io/blob/61fff8e5e4a2a1a3ebc39b6654691d02cc78dba6/CV.pdf"
+                    download="resume.pdf"
+                    onClick={() => setIsMobileMenuOpen(false)} // Menüyü kapat
+                    className="font-bold px-3 py-2 transition-all duration-300 transform hover:scale-110 text-gray-500 hover:text-amber-800"
+                  >
+                    Download Resume
+                  </a>
+                </nav>
+              )}
+            </div>
+          );
+        };
         // Main App component
         const App = () => {
           // Initialize state from localStorage or use defaults
@@ -780,7 +833,7 @@ const ProjectDetailPage = ({ project, onBack }) => {
             return savedExpandedState ? JSON.parse(savedExpandedState) : false;
           });
           const [selectedProject, setSelectedProject] = useState(null);
-
+          const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
           // Save state to localStorage whenever it changes
           useEffect(() => {
             localStorage.setItem('currentPage', currentPage);
@@ -831,62 +884,66 @@ const ProjectDetailPage = ({ project, onBack }) => {
             }
             switch (currentPage) {
               case 'about':
-                return (
-                  <div className="py-20 px-4 flex-1">
-                    <p className='mb-5'></p>
-                    <div className="container mx-auto max-w-5xl">
-                      <h1 className="text-3xl font-bold text-gray-800 mb-8">
-                        <Typewriter
-                          text={["Hi, I am Kaan!"]}
-                          delay={70}
-                          infinite={false}
-                        />
-                      </h1>
-                      
-                      <p className="mb-8"></p> 
-                      <div className="flex flex-col md:flex-row items-center md:space-x-8">
-                        <div className="text-lg leading-relaxed text-gray-700 text-justify">
-                          <p className="mb-4">
-                            I am a <b>senior mechanical engineering student</b> at University of Rochester (GPA 3.94/4.00), expected to graduate
-                            in <b>May 2026</b>. My academic foundation, supported by honors like the Tau Beta Pi Scholarship, is enhanced by
-                            project leadership, mechanical design and analysis projects and hands-on research experience.
-                          </p>
-                          <p className="mb-4">
-                            My practical experience is showcased by my roles in the UR Baja SAE team (Collegiate Offroad Racing Competition) as Chief Engineer 
-                            and Drivetrain Project Team Co-Leader. I directed a large team through the full vehicle design and fabrication cycle. I have designed the team's first-ever custom differential,
-                             along with a custom transfer case, and driveshaft, utilizing Siemens NX for all  modeling, assembly and analysis. 
-                             This involved setting proper requirements and specifications, applying Finite Element Analysis (FEA) with NASTRAN, using AGMA equations to compute 
-                             loads and ensure the structural integrity of custom parts.
-                          </p>
-                          <p className="mb-4">
-                          I was a co-author in the project 'Determining Yield Characteristics of Heat Treated 4130 Steel Under Torsion' which involved measuring the yield 
-                          characteristics of heat-treated 4130 steel samples under torsional load. The aim was to replicate loading conditions similar to those car axles 
-                          are subject to and compare the analyis with Finite Element Models to validate future designs. This research required developing a custom torque 
-                          testing rig and specific testing methodology. I was involved in the design of the torque testing rig and was responsible of the analysis of the 
-                          strain gauge data using MATLAB and first principles engineering equations and the finite element model to compare with. In addition I have also 
-                          manufactured some of the components using manual and CNC vertical mills.
-                          </p>
-                          <p>
-                             I am eager to 
-                            leverage my skills and enthusiasm to contribute to impactful engineering projects and continue learning in a dynamic 
-                            professional environment. I am proficient across the full engineering software suite, including Siemens NX, MATLAB, 
-                            ANSYS Fluent, and PTC Creo. For a detailed look at my technical capabilities, please download my full resume, and I 
-                            encourage you to also visit my Projects section to explore my work in greater detail.
-                          </p>
-                          <div className="mt-8">
-                            <a 
-                              href="https://github.com/kaanayt0004/kaanayt0004.github.io/blob/61fff8e5e4a2a1a3ebc39b6654691d02cc78dba6/CV.pdf" 
-                              download="resume.pdf"
-                              className="inline-block bg-amber-800 text-white font-bold py-2 px-4 rounded-lg hover:bg-amber-900 transition-all duration-300 transform hover:scale-105"
-                            >
-                              Download My Resume
-                            </a>
-                          </div>
+              return (
+                // Outer container: Increased horizontal padding (px-6 by default, px-4 on smaller)
+                // and vertical padding (py-12 by default, py-20 on larger) for better border margin
+                <div className="py-12 px-8 sm:px-10 md:py-20 flex-1">
+                  <p className='mb-5'></p>
+                  {/* Inner container: Reduced or removed side padding here to rely on the outer div's padding */}
+                  <div className="container mx-auto max-w-5xl">
+                    <h1 className="text-3xl font-bold text-gray-800 mb-8">
+                      <Typewriter
+                        text={["Hi, I am Kaan!"]}
+                        delay={70}
+                        infinite={false}
+                      />
+                    </h1>
+                    
+                    <p className="mb-8"></p> 
+                    {/* Adjusted the layout for very small screens: md:space-x-8 will only apply spacing on medium screens and up. */}
+                    <div className="flex flex-col md:flex-row items-center md:space-x-8">
+                      <div className="text-lg leading-relaxed text-gray-700 text-justify">
+                        <p className="mb-4">
+                          I am a <b>senior mechanical engineering student</b> at University of Rochester (GPA 3.94/4.00), expected to graduate
+                          in <b>May 2026</b>. My academic foundation, supported by honors like the Tau Beta Pi Scholarship, is enhanced by
+                          project leadership, mechanical design and analysis projects and hands-on research experience.
+                        </p>
+                        <p className="mb-4">
+                          My practical experience is showcased by my roles in the UR Baja SAE team (Collegiate Offroad Racing Competition) as Chief Engineer 
+                          and Drivetrain Project Team Co-Leader. I directed a large team through the full vehicle design and fabrication cycle. I have designed the team's first-ever custom differential,
+                            along with a custom transfer case, and driveshaft, utilizing Siemens NX for all  modeling, assembly and analysis. 
+                            This involved setting proper requirements and specifications, applying Finite Element Analysis (FEA) with NASTRAN, using AGMA equations to compute 
+                            loads and ensure the structural integrity of custom parts.
+                        </p>
+                        <p className="mb-4">
+                        I was a co-author in the project 'Determining Yield Characteristics of Heat Treated 4130 Steel Under Torsion' which involved measuring the yield 
+                        characteristics of heat-treated 4130 steel samples under torsional load. The aim was to replicate loading conditions similar to those car axles 
+                        are subject to and compare the analyis with Finite Element Models to validate future designs. This research required developing a custom torque 
+                        testing rig and specific testing methodology. I was involved in the design of the torque testing rig and was responsible of the analysis of the 
+                        strain gauge data using MATLAB and first principles engineering equations and the finite element model to compare with. In addition I have also 
+                        manufactured some of the components using manual and CNC vertical mills.
+                        </p>
+                        <p>
+                          I am eager to 
+                          leverage my skills and enthusiasm to contribute to impactful engineering projects and continue learning in a dynamic 
+                          professional environment. I am proficient across the full engineering software suite, including Siemens NX, MATLAB, 
+                          ANSYS Fluent, and PTC Creo. For a detailed look at my technical capabilities, please download my full resume, and I 
+                          encourage you to also visit my Projects section to explore my work in greater detail.
+                        </p>
+                        <div className="mt-8">
+                          <a 
+                            href="https://github.com/kaanayt0004/kaanayt0004.github.io/blob/61fff8e5e4a2a1a3ebc39b6654691d02cc78dba6/CV.pdf" 
+                            download="resume.pdf"
+                            className="inline-block bg-amber-800 text-white font-bold py-2 px-4 rounded-lg hover:bg-amber-900 transition-all duration-300 transform hover:scale-105"
+                          >
+                            Download My Resume
+                          </a>
                         </div>
                       </div>
                     </div>
                   </div>
-                );
+                </div>
+              );
               case 'projects':
                 return (
                   <div className="py-20 px-4 flex-1">
@@ -998,14 +1055,25 @@ const ProjectDetailPage = ({ project, onBack }) => {
 
           return (
             <div className="flex flex-col min-h-screen bg-amber-50 font-sans text-gray-800">
+              
+              {/* === YENİ MOBİL NAVİGASYON === */}
+              <MobileNav 
+                currentPage={currentPage}
+                setCurrentPage={setCurrentPage}
+                isMobileMenuOpen={isMobileMenuOpen}
+                setIsMobileMenuOpen={setIsMobileMenuOpen}
+              />
+
               {/* Wrapper for navigation and main content */}
               <div className="flex flex-1">
-                {/* Vertical Navigation Bar */}
-                <div className="w-64 p-4 sticky top-0 h-screen flex flex-col justify-center">
+                
+                {/* === GÜNCELLENDİ: Vertical Navigation Bar (Masaüstü için) === */}
+                {/* "hidden" (mobilde gizli) ve "md:flex" (orta ekran ve üstünde görünür) eklendi */}
+                <div className="hidden md:flex w-64 p-4 sticky top-0 h-screen flex-col justify-center">
                   <nav>
                         <div className="flex-shrink-0 mb-8 md:mb-0">
                             <img
-                                src="https://placehold.co/250x250/ADD8E6/000000?text=Your+Photo"
+                                src="https://github.com/kaanayt0004/kaanayt0004.github.io/blob/main/OnePagers/Headshot.jpg?raw=true"
                                 alt="Your Profile"
                                 className="w-32 h-32 rounded-full object-cover border-4 border-amber-700 shadow-lg block mx-auto"
                                 href="#" onClick={() => setCurrentPage('about')}
@@ -1021,13 +1089,22 @@ const ProjectDetailPage = ({ project, onBack }) => {
                         <NavItem href="projects" isActive={currentPage === 'projects' || currentPage === 'project-detail'} onClick={setCurrentPage}>Projects</NavItem>
                         <NavItem href="interests" isActive={currentPage === 'interests' || currentPage === 'photography-gallery'} onClick={setCurrentPage}>Interests</NavItem>
                         <NavItem href="contact" isActive={currentPage === 'contact'} onClick={setCurrentPage}>Contact</NavItem>
+                        <a
+                          href="https.github.com/kaanayt0004/kaanayt0004.github.io/blob/61fff8e5e4a2a1a3ebc39b6654691d02cc78dba6/CV.pdf"
+                          download="resume.pdf"
+                          onClick={() => setIsMobileMenuOpen(false)} // Menüyü kapat
+                          className="font-bold px-3 py-2 transition-all duration-300 transform hover:scale-110 text-gray-500 hover:text-amber-800"
+                        >
+                          Download Resume
+                        </a>
                       </div>
                     </div>
                   </nav>
                 </div>
 
-                {/* Main Content Area */}
-                <div className="flex-1 overflow-y-auto flex flex-col">
+                {/* === GÜNCELLENDİ: Main Content Area === */}
+                {/* Mobilde sabit menü için "pt-20" (padding-top) eklendi, masaüstünde "md:pt-0" ile sıfırlandı */}
+                <div className="flex-1 overflow-y-auto flex flex-col pt-20 md:pt-0">
                   {renderPage()}
                 </div>
               </div>
