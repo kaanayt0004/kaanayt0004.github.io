@@ -212,6 +212,15 @@ const ProjectDetailPage = ({ project, onBack }) => {
                         <li>FDU shall be replaceable with the previous cars front drive solution (Bought Differential from Hilliard). [R05]</li>
                         </ul>
                     </div>
+                    
+                    <div className="my-8">
+                    <img 
+                        src="https://github.com/kaanayt0004/kaanayt0004.github.io/blob/main/OnePagers/img/Diff_PughMatrix.png?raw=true" 
+                        alt="Pugh Decision Matrix of the Front Drive Unit" 
+                        className="w-full h-auto rounded-lg shadow-md border border-amber-200"
+                    />
+                    <p className="text-sm text-gray-500 mt-2 text-center italic">Figure 1: Pugh Decision Matrix of the Front Drive Unit (FDU)</p>
+                    </div>
 
                     <div className="mt-6">
                         <h4 className="text-lg font-semibold text-gray-800 mb-2">Design and Modeling</h4>
@@ -321,7 +330,29 @@ const ProjectDetailPage = ({ project, onBack }) => {
                 </>
             );
             break;
-        
+        case "Aerodynamic CFD Based Optimization of a Taxi Vehicle":
+            detailedContent = (
+                <>
+                    <p className="text-gray-600 mb-4">
+                        Conducted research on optimizing the drag coefficient of a common taxi car using ANSYS Fluent and fitted Bezier Curves.
+                    </p>
+                    <div className="mt-6">
+                        <h4 className="text-lg font-semibold text-gray-800 mb-2">Kinematic Analysis</h4>
+                        <p className="text-gray-600">
+                            MATLAB scripts were written to model the kinematic behavior of the gear train, ensuring smooth power transfer in various drive modes.
+                        </p>
+                    </div>
+                    {/* Add more specific content for this project */}
+                    <body class="h-screen flex items-center justify-center">
+                      <img src='https://placehold.co/600x400/ADD8E6/000000?text=Material+Science'></img>
+                    </body>
+                </>
+            );
+            break;
+                                 
+
+
+
         // Add more cases for each project title
         default:
             detailedContent = (
