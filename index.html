@@ -142,10 +142,24 @@
           },
           {
               title: "Transfer Case Design and Analysis",
-              description: "",
-              detailedDescription: "Designed and analyzed a transfer case for a 4x4 drivetrain. Used MATLAB for gear ratio calculations and torque distribution modeling. Finite element analysis (FEA) was performed to assess structural integrity.",
-              image: "https://placehold.co/600x400/ADD8E6/000000?text=Transfer+Case",
-              tags: ["Siemens NX", "NASTRAN", "FEA", "Kinematic Simulation", "FEA", 'Mechanical Design', 'Manufacturing']
+              description: "Gearbox that transfers direction of torque using bevel gears.",
+              detailedDescription: "Designed and analyzed a transfer case for a 4x4 drivetrain. Used MATLAB for gear ratio calculations and gear stresses. Finite element analysis (FEA) was performed to assess structural integrity.",
+              image: "https://github.com/kaanayt0004/kaanayt0004.github.io/blob/main/OnePagers/img/BevelBox_Cover.png?raw=true",
+              tags: ["Siemens NX", "NASTRAN", "MATLAB", "FEA", 'Mechanical Design', 'Manufacturing', 'CAM']
+          },
+          {
+              title: "Air Engine",
+              description: "Air engine that rotates a flywheel using compressed air.",
+              detailedDescription: "Designed and analyzed an air engine in exploration of manufacturing methods and motion simulations. The engine utilized compressed air to drive pistons and generate mechanical work.",
+              image: "https://github.com/kaanayt0004/kaanayt0004.github.io/blob/main/OnePagers/img/AirEngine_Cover.png?raw=true",
+              tags: ["Siemens NX", "NASTRAN", "MATLAB", "FEA", 'Mechanical Design', 'Manufacturing', 'CAM']
+          },
+          {
+              title: "Laser Absorption Research",
+              description: "Conducted in-depth numerical calculations of free-free laser absorption rates in plasmas, incorporating quantum scattering theory and screening effects",
+              detailedDescription: "Conducted in-depth numerical calculations of free-free laser absorption rates in plasmas, incorporating quantum scattering theory and screening effects",
+              image: "https://github.com/kaanayt0004/kaanayt0004.github.io/blob/main/OnePagers/APS_25_v2.png?raw=true",
+              tags: ["Thermodynamics", "ANSYS", "Heat Transfer"]
           },
           {
               title: "Universal Joint Assembly Design",
@@ -175,13 +189,7 @@
               image: "https://placehold.co/600x400/ADD8E6/000000?text=Gearbox+Motion+Simulation+and+Analysis",
               tags: ["SolidWorks", "FEA"]
           },
-          {
-              title: "Laser Absorption Research",
-              description: "Conducted in-depth numerical calculations of free-free laser absorption rates in plasmas, incorporating quantum scattering theory and screening effects",
-              detailedDescription: "Conducted in-depth numerical calculations of free-free laser absorption rates in plasmas, incorporating quantum scattering theory and screening effects",
-              image: "https://github.com/kaanayt0004/kaanayt0004.github.io/blob/main/OnePagers/APS_25_v2.png?raw=true",
-              tags: ["Thermodynamics", "ANSYS", "Heat Transfer"]
-          },
+          
       ];
         
         
@@ -282,7 +290,8 @@ const ProjectDetailPage = ({ project, onBack }) => {
                           Dual tapered spherical roller bearings were used to keep the axle outputs aligned such that the bevel gear is rigidly mounted. These
                           outputs are attached to the bevel gear via a key that connects to the pressed one way bearing. 
                         </p>
-                    </div>
+                        
+                      </div>
                     <div className="mt-6">
                         <h4 className="text-lg font-semibold text-gray-800 mb-2">Analysis</h4>
                         <p className="text-gray-600">
@@ -300,32 +309,63 @@ const ProjectDetailPage = ({ project, onBack }) => {
             );
             break;
             
-        case "Transfer Case Design and Analysis":
-            detailedContent = (
-                <>
-                    <p className="text-gray-600 mb-4">
-                        Designed and analyzed a multi-stage transfer case for a 4x4 drivetrain. Used MATLAB for gear ratio calculations and torque distribution modeling.
-                    </p>
-                    <div className="mt-6">
-                        <h4 className="text-lg font-semibold text-gray-800 mb-2">Kinematic Analysis</h4>
-                        <p className="text-gray-600">
-                            MATLAB scripts were written to model the kinematic behavior of the gear train, ensuring smooth power transfer in various drive modes.
-                        </p>
-                    </div>
-                    {/* Add more specific content for this project */}
-                    <body class="h-screen flex items-center justify-center">
-                      <img src='https://placehold.co/600x400/ADD8E6/000000?text=Material+Science'></img>
-                    </body>
-                </>
-            );
-            break;
+            case "Transfer Case Design and Analysis":
+        detailedContent = (
+            <>
+                <p className="text-gray-600 mb-6">
+                    Designed and analyzed a transfer case for a 4x4 drivetrain. Used MATLAB for gear ratio calculations and gear stresses. Finite element analysis (FEA) was performed to assess structural integrity.
+                </p>
+                
+                <h4 className="text-lg font-semibold text-gray-800 mb-4">Engineering Requirements & Verification</h4>
+                <div className="overflow-x-auto rounded-lg border border-amber-200 shadow-sm">
+                    <table className="min-w-full divide-y divide-amber-200">
+                        <thead className="bg-amber-100">
+                            <tr>
+                                <th className="px-4 py-3 text-left text-xs font-bold text-amber-900 uppercase tracking-wider">#</th>
+                                <th className="px-4 py-3 text-left text-xs font-bold text-amber-900 uppercase tracking-wider">Requirement</th>
+                                <th className="px-4 py-3 text-left text-xs font-bold text-amber-900 uppercase tracking-wider">Source/Logic</th>
+                                <th className="px-4 py-3 text-left text-xs font-bold text-amber-900 uppercase tracking-wider">Verification</th>
+                            </tr>
+                        </thead>
+                        <tbody className="bg-white divide-y divide-gray-100">
+                            {[
+                                { id: "R01", req: "The transfer box shall continously transmit up to 30 ft-lbf of torque and engine speeds up to 4000 RPM without yielding, fracture, or permanent deformation of any component.", src: "Based on 1.5x maximum torque and RPM provided by the engine.", ver: "FEA Analysis & Torque test fixture" },
+                                { id: "R02", req: "The transfer box shall achieve a design life of ≥ 50 operating hours or ≥ 300 vehicle miles, whichever occurs first, with no functional degradation.", src: "System level design life is 2 years (3 competitions + testing)", ver: "First principles durability equations" },
+                                { id: "R03", req: "Total mass of the transfer box shall not exceed XX lbf.", src: "System level weight requirements", ver: "Weight scale measurement" },
+                                { id: "R04", req: "The transfer box shall operate without lubricant leakage, seal failure, or internal gauge pressure exceeding 5 psi when exposed to ambient temperatures from –10 °C to +70 °C.", src: "Average operating conditions and rules", ver: "In-vehicle testing & First principle equations" },
+                                { id: "R05", req: "The transfer box shall change the direction of power transmission by 90° ±1° about the normal from the incline of the gearbox to fit the driveshaft.", src: "Alignment of Gears and Universal Joints of the driveshaft", ver: "FEA and metrology" },
+                                { id: "R06", req: "All structural components shall achieve a minimum factor of safety of 1.5 against yield under peak torque loading.", src: "System level durability requirements", ver: "FEA Analysis" },
+                                { id: "R07", req: "The transfer box case shall be either manufacturable using a standard knee mill, lathe, tools in Taylor Hall Machine Shop or purchasable.", src: "Ability to manufacture in-house (Taylor Hall)", ver: "Manufactured in-house/purchased" },
+                                { id: "R08", req: "The total material cost of the transfer box shall not exceed $XX per unit.", src: "Budget of the drivetrain subsystem", ver: "Total money spent tracking" },
+                                { id: "R09", req: "All rotating components shall be fully enclosed according to HROE regulations to prevent accidents.", src: "Compliance with Baja SAE ruleset", ver: "Caliper measurement of case" }
+                            ].map((row, i) => (
+                                <tr key={i} className="hover:bg-amber-50 transition-colors">
+                                    <td className="px-4 py-3 whitespace-nowrap text-sm font-bold text-amber-800">{row.id}</td>
+                                    <td className="px-4 py-3 text-sm text-gray-700">{row.req}</td>
+                                    <td className="px-4 py-3 text-sm text-gray-600 italic">{row.src}</td>
+                                    <td className="px-4 py-3 text-sm text-gray-700 font-medium">{row.ver}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
 
-        case "Offroad Car Axle Design":
+                <div className="mt-8">
+                    <h4 className="text-lg font-semibold text-gray-800 mb-2">Kinematic Analysis</h4>
+                    <p className="text-gray-600">
+                        MATLAB scripts were written to model the kinematic behavior of the gear train, ensuring smooth power transfer in various drive modes.
+                    </p>
+                </div>
+            </>
+        );
+        break;
+
+        case "Air Engine":
             detailedContent = (
                 <>
                     <p className="text-gray-600 mb-4">
-                       This project focused on improving the fuel efficiency of a taxi vehicle by optimizing its aerodynamic shape. Used ANSYS Fluent for computational fluid dynamics (CFD) simulations.
-                    </p>
+                      Designed and analyzed an air engine in exploration of manufacturing methods and motion simulations. The engine utilized compressed air to drive pistons and generate mechanical work.
+                      </p>
                     {/* Add more specific content for this project */}
                 </>
             );
