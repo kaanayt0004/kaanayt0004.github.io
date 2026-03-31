@@ -129,20 +129,7 @@
 
         // Project data
             const projects = [
-          {
-              title: "Custom Front Drive Unit (FDU) for a 4WD Offroad Vehicle",
-              description: "Designed and manufactured a custom differential solution for a 4WD offroad vehicle to compete in the Baja SAE competitions.",
-              image: "https://github.com/kaanayt0004/kaanayt0004.github.io/blob/main/OnePagers/Differential.png?raw=true",
-              tags: ["Siemens NX", "SolidWorks","MATLAB", "NASTRAN", "FEA", 'Mechanical Design', 'Manufacturing', '3D Printing']
-          },
           
-          {
-              title: "Offroad Car Axle Design",
-              description: "Collaborated on a team to design and 3D print a functional prosthetic hand for a child, using SolidWorks for modeling and FDM printing.",
-              detailedDescription: "This project involved the complete design and analysis of a car axle. CAD modeling was done in Siemens NX, followed by finite element analysis (FEA) to simulate bending and torsional stresses.",
-              image: "https://github.com/kaanayt0004/kaanayt0004.github.io/blob/main/OnePagers/Axle.png?raw=true",
-              tags: ["Siemens NX", "NASTRAN", "FEA", "Kinematic Simulation", "FEA", 'Mechanical Design', 'Manufacturing']
-          },
           
           {
               title: "Investigating Heat Treating Methods on 4130 Steel",
@@ -159,18 +146,47 @@
               tags: ["Siemens NX", "NASTRAN", "MATLAB", "FEA", 'Mechanical Design', 'Manufacturing', 'CAM']
           },
           {
-              title: "Air Engine",
-              description: "Air engine that rotates a flywheel using compressed air.",
-              detailedDescription: "Designed and analyzed an air engine in exploration of manufacturing methods and motion simulations. The engine utilized compressed air to drive pistons and generate mechanical work.",
-              image: "https://github.com/kaanayt0004/kaanayt0004.github.io/blob/main/OnePagers/img/AirEngine_Cover.png?raw=true",
-              tags: ["Siemens NX", "NASTRAN", "MATLAB", "FEA", 'Mechanical Design', 'Manufacturing', 'CAM']
+              title: "Newtonian Telescope Design, Analysis and Manufacture",
+              description: "In collaboration with optical engineers, designed, analyzed and manufactured a Newtonian telescope.",
+              detailedDescription: "Collaborated with optical engineers to design and analyze a Newtonian telescope. Used Siemens NX for CAD modeling and FEA for structural analysis. The telescope was manufactured using CNC machining",
+              image: "https://github.com/kaanayt0004/kaanayt0004.github.io/blob/main/OnePagers/img/Optics_Senior_Design.png?raw=true",
+              tags: ["Siemens NX", "FEA", "Eigenvalue Analysis", "CNC", "CAM", 'Mechanical Design', 'Manufacturing']
           },
+          {
+              title: "Custom Front Drive Unit (FDU) for a 4WD Offroad Vehicle",
+              description: "Designed and manufactured a custom differential solution for a 4WD offroad vehicle to compete in the Baja SAE competitions.",
+              image: "https://github.com/kaanayt0004/kaanayt0004.github.io/blob/main/OnePagers/Differential.png?raw=true",
+              tags: ["Siemens NX", "SolidWorks","MATLAB", "NASTRAN", "FEA", 'Mechanical Design', 'Manufacturing', '3D Printing']
+          },
+          
+          {
+              title: "Offroad Car Axle Design",
+              description: "Collaborated on a team to design and 3D print a functional prosthetic hand for a child, using SolidWorks for modeling and FDM printing.",
+              detailedDescription: "This project involved the complete design and analysis of a car axle. CAD modeling was done in Siemens NX, followed by finite element analysis (FEA) to simulate bending and torsional stresses.",
+              image: "https://github.com/kaanayt0004/kaanayt0004.github.io/blob/main/OnePagers/Axle.png?raw=true",
+              tags: ["Siemens NX", "NASTRAN", "FEA", "Kinematic Simulation", "FEA", 'Mechanical Design', 'Manufacturing']
+          },
+          
           {
               title: "Laser Absorption Research",
               description: "Conducted in-depth numerical calculations of free-free laser absorption rates in plasmas, incorporating quantum scattering theory and screening effects",
               detailedDescription: "Conducted in-depth numerical calculations of free-free laser absorption rates in plasmas, incorporating quantum scattering theory and screening effects",
               image: "https://github.com/kaanayt0004/kaanayt0004.github.io/blob/main/OnePagers/APS_25_v2.png?raw=true",
               tags: ["Thermodynamics", "ANSYS", "Heat Transfer"]
+          },
+          {
+              title: "Air Bearing Testing Rig - ASML",
+              description: "Testing setup to measure and quantify micron level displacement and load capacity of an air bearing system.",
+              detailedDescription: "Designed and analyzed an air engine in exploration of manufacturing methods and motion simulations. The engine utilized compressed air to drive pistons and generate mechanical work.",
+              image: "https://github.com/kaanayt0004/kaanayt0004.github.io/blob/main/OnePagers/img/SeniorDesign.png?raw=true",
+              tags: ["Siemens NX", "NASTRAN", "MATLAB", "FEA", 'Mechanical Design', 'Manufacturing', 'CAM']
+          },
+          {
+              title: "Air Engine",
+              description: "Air engine that rotates a flywheel using compressed air.",
+              detailedDescription: "Designed and analyzed an air engine in exploration of manufacturing methods and motion simulations. The engine utilized compressed air to drive pistons and generate mechanical work.",
+              image: "https://github.com/kaanayt0004/kaanayt0004.github.io/blob/main/OnePagers/img/AirEngine_Cover.png?raw=true",
+              tags: ["Siemens NX", "NASTRAN", "MATLAB", "FEA", 'Mechanical Design', 'Manufacturing', 'CAM']
           },
           {
               title: "Universal Joint Assembly Design",
@@ -200,6 +216,7 @@
               image: "https://placehold.co/600x400/ADD8E6/000000?text=Gearbox+Motion+Simulation+and+Analysis",
               tags: ["SolidWorks", "FEA"]
           },
+          
           
       ];
         
@@ -370,6 +387,18 @@ const ProjectDetailPage = ({ project, onBack }) => {
             </>
         );
         break;
+
+        case "Newtonian Telescope Design, Analysis and Manufacture":
+            detailedContent = (
+                <>
+                    <p className="text-gray-600 mb-4">
+                      Designed and analyzed a Newtonian telescope, focusing on optical design and manufacturing processes. This project included cross-discipline
+                      communication with optical engineering students, structural and modal analysis to prevent jitter and line of sight errors, and manufacturing of the telescope tube and mirror mounts using CNC machining.
+                      </p>
+                    {/* Add more specific content for this project */}
+                </>
+            );
+            break;
 
         case "Air Engine":
             detailedContent = (
