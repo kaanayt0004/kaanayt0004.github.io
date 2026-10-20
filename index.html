@@ -237,6 +237,18 @@ const ProjectDetailPage = ({ project, onBack }) => {
                         Senior design project aiming to identify, design a testing setup, and test the stiffness of commercial air bearings that could be replacements to the custom air bearings used in ASML products. Please see the full report embedded below or download it for offline reading.
                     </p>
 
+
+                    <div className="w-full h-[650px] rounded-xl overflow-hidden shadow-lg border border-amber-200 bg-white mb-6">
+                        <iframe 
+                            src={`https://docs.google.com/gview?url=${encodeURIComponent(docs/ASML_Team_FDR.pdf)}&embedded=true`}
+                            title="ASML Air Bearing Testing Rig Report"
+                            className="w-full h-full border-none"
+                        >
+                            <p className="p-6 text-gray-600 text-center">
+                                Unable to display PDF directly. Use the download button below.
+                            </p>
+                        </iframe>
+                    </div>
                     <div className="flex justify-center pt-2 pb-4">
                         <a 
                             href= "docs/ASML_Team_FDR.pdf"
