@@ -130,7 +130,13 @@
         // Project data
             const projects = [
           
-          
+          {
+              title: "Air Bearing Testing Rig - ASML",
+              description: "Testing setup to measure and quantify micron level displacement and load capacity of an air bearing system.",
+              detailedDescription: "Designed and analyzed an air engine in exploration of manufacturing methods and motion simulations. The engine utilized compressed air to drive pistons and generate mechanical work.",
+              image: "https://github.com/kaanayt0004/kaanayt0004.github.io/blob/main/OnePagers/img/SeniorDesign.png?raw=true",
+              tags: ["Siemens NX", "NASTRAN", "MATLAB", "FEA", 'Mechanical Design', 'Manufacturing', 'CAM']
+          },
           {
               title: "Investigating Heat Treating Methods on 4130 Steel",
               description: "Measuring the change in yield stress of welded and heat treated 4130 steel samples.",
@@ -173,13 +179,6 @@
               detailedDescription: "Conducted in-depth numerical calculations of free-free laser absorption rates in plasmas, incorporating quantum scattering theory and screening effects",
               image: "https://github.com/kaanayt0004/kaanayt0004.github.io/blob/main/OnePagers/APS_25_v2.png?raw=true",
               tags: ["Thermodynamics", "ANSYS", "Heat Transfer"]
-          },
-          {
-              title: "Air Bearing Testing Rig - ASML",
-              description: "Testing setup to measure and quantify micron level displacement and load capacity of an air bearing system.",
-              detailedDescription: "Designed and analyzed an air engine in exploration of manufacturing methods and motion simulations. The engine utilized compressed air to drive pistons and generate mechanical work.",
-              image: "https://github.com/kaanayt0004/kaanayt0004.github.io/blob/main/OnePagers/img/SeniorDesign.png?raw=true",
-              tags: ["Siemens NX", "NASTRAN", "MATLAB", "FEA", 'Mechanical Design', 'Manufacturing', 'CAM']
           },
           {
               title: "Air Engine",
@@ -230,6 +229,27 @@ const ProjectDetailPage = ({ project, onBack }) => {
 
     // Use a switch statement to render content based on the project title
     switch (project.title) {
+         case "Air Bearing Testing Rig - ASML":
+
+          detailedContent = (
+                <>
+                    <p className="text-gray-600 mb-6 leading-relaxed">
+                        Senior design project aiming to identify, design a testing setup, and test the stiffness of commercial air bearings that could be replacements to the custom air bearings used in ASML products. Please see the full report embedded below or download it for offline reading.
+                    </p>
+
+                    <div className="flex justify-center pt-2 pb-4">
+                        <a 
+                            href= "docs/ASML_Team_FDR.pdf"
+                            download="ASML_Air_Bearing_Report.pdf"
+                            rel="noopener noreferrer"
+                            className="inline-block bg-amber-800 text-white font-bold py-2 px-4 rounded-lg hover:bg-amber-900 transition-all duration-300 transform hover:scale-105"
+                        >
+                            Download Full Project Report (PDF)
+                        </a>
+                    </div>
+                </>
+            );
+            break;
         case "Custom Front Drive Unit (FDU) for a 4WD Offroad Vehicle":
             detailedContent = (
                 <>
